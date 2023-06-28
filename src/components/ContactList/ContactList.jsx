@@ -1,13 +1,19 @@
-import css from './ContactList.module.css'
+import React from 'react';
+import css from './ContactList.module.css';
 
-export const ContactList = ({ contacts, handleDelete }) => (
-  <>
-  
+const ContactList = ({ contacts, handleDelete }) => {
+  return (
     <ul>
-      {contacts.map((contact,id) => (
-        <li key={id}>{contact.name} {contact.number}
-        <button className = {css.button}type="button" onClick={()=> handleDelete(contact.id)}> Delete </button></li>
+      {contacts.map(contact => (
+        <li key={contact.id}>
+          {contact.name} {contact.number}
+          <button className={css.button} type="button" onClick={() => handleDelete(contact.id)}>
+            Delete
+          </button>
+        </li>
       ))}
     </ul>
-  </>
-);
+  );
+};
+
+export default ContactList;

@@ -1,8 +1,9 @@
+import React from 'react';
 import css from './Filter.module.css';
 
-export const Filter = ({ filter, handleChange }) => (
+const Filter = ({ filter, handleChange }) => (
   <div className={css.filter}>
-    <label className={css.filterLabel}> Find contacts by name </label>
+    <label className={css.filterLabel}>Find contacts by name</label>
     <input
       className={css.filterName}
       type="text"
@@ -13,3 +14,5 @@ export const Filter = ({ filter, handleChange }) => (
     />
   </div>
 );
+
+export default Filter;
